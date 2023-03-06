@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+    employeeapplication:
+      restart: always
+      build:
+        context: ./
+        dockerfile: Dockerfile
+      ports:
+        - "8083:8080"
+      networks:
+        - employeeapp
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/employee
+        SPRING_DATASOURCE_USERNAME: root
+        SPRING_DATASOURCE_PASSWORD: Duythong1998
+        HOST_URL: http://localhost:8083
+      depends_on:
+        - mysqldb
+      
+    mysqldb:
+      image: mysql:5.7
+      ports:
+        - "3309:3306"
+      environment:
+        MYSQL_DATABASE: employee
+        MYSQL_PASSWORD: Duythong1998
+        MYSQL_ROOT_PASSWORD: Duythong1998
+      networks:
+        - employeeapp
+  
+networks:
+  employeeapp:
