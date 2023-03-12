@@ -100,6 +100,34 @@ npm install
 expo start
 ```
 
+```bash
+application.propertiles to store email, database configugation is gitignored, please create yours based on below:
+
+server.port=
+
+spring.mail.host=
+spring.mail.port=
+spring.mail.username=
+spring.mail.password=
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+host.url=
+
+
+JWT.expiration=
+JWT.secretKey=
+
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+```
+
+
+
 ## Badges
 
 Add badges from somewhere like: [shields.io](https://shields.io/)
